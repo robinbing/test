@@ -15,8 +15,10 @@ mainPrint =
     fit.result = fitStats(real, predict)
 
     # print Client dbname
-    dbname = printDbname(client_id = client_id, user, password)
-
+    if (printDbname(client_id = client_id, user, password)) {
+      dbname = printDbname(client_id = client_id, user, password)
+    }
+    else(return('wrong!'))
     # print result
     print(paste0('Running client is ', dbname,
                  '. The final result is %', fit.result$mape * 100, ' mape',
@@ -27,5 +29,4 @@ mainPrint =
 password = Sys.getenv('DB.PASSWORD')
 user = Sys.getenv('DB.USER')
 client_id = Sys.getenv('CLIENTID')
-print(c(client_id, user, password))
 mainPrint(client_id, user, password)
