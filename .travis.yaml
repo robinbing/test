@@ -1,0 +1,11 @@
+language: R
+
+services:
+  - docker 
+  
+install:
+  - docker build -t toypkg .
+  
+script:
+  - docker run -e CLIENTID=23 toypkg
+  
