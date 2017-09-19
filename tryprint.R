@@ -15,15 +15,16 @@ mainPrint =
     fit.result = fitStats(real, predict)
 
     # print Client dbname
-    if (printDbname(client_id = client_id, user, password)) {
-      dbname = printDbname(client_id = client_id, user, password)
+    tryCatch({dbname = printDbname(client_id = client_id, user, password)},
+             error = function(e) NULL)
+    if(exists('dbname')){
+      print(paste0('Running client is ', dbname,
+                   '. The final result is %', fit.result$mape * 100, ' mape',
+                   ', %', fit.result$rmse * 100, ' rmse',
+                   ', %', fit.result$mae * 100, ' mae.'))
+    } else {
+      return('Cannot access MySQL db. Check internet settings.')
     }
-    else(return('wrong!'))
-    # print result
-    print(paste0('Running client is ', dbname,
-                 '. The final result is %', fit.result$mape * 100, ' mape',
-                 ', %', fit.result$rmse * 100, ' rmse',
-                 ', %', fit.result$mae * 100, ' mae.'))
   }
   
 password = Sys.getenv('DB.PASSWORD')
