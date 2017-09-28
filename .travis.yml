@@ -18,4 +18,4 @@ before_script:
 
 script:
 - docker run -e CLIENTID=23 toypkg
-- Rscript -e 'print(Working)'
+- Rscript -e 'print("Working")'
