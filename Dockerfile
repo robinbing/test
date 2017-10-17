@@ -24,7 +24,8 @@ RUN install2.r --error \
 
 
 # Install R packages
-RUN R -e "devtools::install_github('twonil/fs/FeatureSelection-master', auth_token = Sys.getenv('AUTH_TOKEN'))"
+RUN echo "devtools::install_github('twonil/fs/FeatureSelection-master', auth_token = $AUTH_TOKEN)" > rinstall
+RUN R -e rinstall
 RUN R -e "devtools::install_github('robinbing/toy', dependencies = TRUE)"
 
 # Set work dir
