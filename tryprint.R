@@ -3,6 +3,7 @@ mainPrint =
   # main function
   #
   function(client_id = client.id, user, password) {
+    library(FeatureSelection)
     # check package
     if(!require(toy)) {
       library(devtools)
