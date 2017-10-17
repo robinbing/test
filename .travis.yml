@@ -11,7 +11,7 @@ env:
   - secure: Ys+0TP3nQ1W3mMBaKOj8hnTWg8klYNW0qMQNinVpIxnfYvpN8359b/cL9dNGQM+qfoQezoz0lHctcXT262xWi3rk19za06WomXTeTtddn7vFGT1Ck0nWcNoPaInJ/ef1DIfPqwFo5nyxdSUqiv6GZ56FczKyyfPzcn8OVb5/lJEBMVtg4/nmqjxqeDjqq7QoUsOPoRImPImp/s7nqyYYATfvPFW/WQvFbowneGJW+RBnJz5jOfJsad7kGP2EnJRV9fVv1WPdUAgobtm+HRxei7yieHmPKLN9lhbh5RAhzqqI3EtqWDgG898s8lCRO7ZJh/HH71fBqUoyC8ohVU4mU+PapUJVUPLYhMzhxuT7IG0BRW+hzKQMO68n3QqbeG4f8XoNl/0tzVH+a/KhMPfFhv22e8JZIdbMTA0SefWmmOHUj1sUSv0yIAZnLMNb6GvjEeToLMUC+a02zM3OKfCUp2g/4TNyG/qGT6mk5+TPkrMiwOFKOy+SqQubr/UduYkAKlQvoniv93u6vhmJRNxH8JdtIlxblzp4KTXXWdALsd3SQVMGbfW3oDveOS/gT3Hna27u6CHE/7NpDFBzEjwHEhLzjaM3NdCnZxbezlwp+QBsHaQZLz4Q+/7yGDfTSMS8myJPe7gUGZsubxcKoYwRdZlunffIP6eK031X/mpVsI0=
 
 install:
-- RUN R -e "devtools::install_github('twonil/fs/FeatureSelection-master', auth_token = $AUTH_TOKEN)"
+- R -e "devtools::install_github('twonil/fs/FeatureSelection-master', auth_token = $AUTH_TOKEN)"
 
 before_script:
 - echo "ENV DB.USER=$DB.USER" >> Dockerfile
