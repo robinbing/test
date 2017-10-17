@@ -2,8 +2,6 @@ FROM cardcorp/r-pandoc
 
 MAINTAINER "Robin Luo" robin.luo@blackwoodseven.com 
 
-RUN R -e 'devtools::install_github("twonil/fs/FeatureSelection-master", auth_token = $AUTH_TOKEN)'
-
 # Install External dependencies 
 RUN apt-get update \
    && apt-get install -y \
@@ -18,6 +16,7 @@ RUN apt-get update \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/ 
 
+RUN R -e 'devtools::install_github("twonil/fs/FeatureSelection-master", auth_token = $AUTH_TOKEN)'
 RUN install2.r --error \
     devtools \
     testthat \
