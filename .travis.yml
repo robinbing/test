@@ -18,7 +18,6 @@ before_script:
 - echo "ENV AUTH_TOKEN=$AUTH_TOKEN" >> Dockerfile
 - echo "ENV DB.PASSWORD=$DB.PASSWORD" >> Dockerfile
 - echo "ENV CLIENTID 4" >> Dockerfile
-- echo RUN R -e "devtools::install_github(\'twonil/fs/FeatureSelection-master\', auth_token = $AUTH_TOKEN)" >> Dockerfile
 
 script:
 - docker build -t toypkg .
