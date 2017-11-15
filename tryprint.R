@@ -24,7 +24,7 @@ mainPrint =
                    ', %', fit.result$rmse * 100, ' rmse',
                    ', %', fit.result$mae * 100, ' mae.'))
     } else {
-      return('Cannot access MySQL db. Check internet settings.')
+      return('Cannot access MySQL db. Check internet settings. Just test!')
     }
   }
   
